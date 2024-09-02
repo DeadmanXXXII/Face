@@ -52,4 +52,10 @@ This report details a Distributed Denial of Service (DDoS) attack aimed at Faceb
 
 The script provided is a practical demonstration of how DDoS attacks through resource exhaustion can be executed. Understanding and implementing robust mitigation strategies are crucial for defending against such attacks and maintaining the availability of online services.
 
-![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/HelpOut/main/Screenshot_20240828-215828.png)
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182507.png)
+
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-180848.png)
+
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182418.png)
+
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182457.png)
