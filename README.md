@@ -16,6 +16,10 @@ This report details a Distributed Denial of Service (DDoS) attack aimed at Faceb
    - **Random Number Generation**: The script generates random 15-digit numbers to create URLs for posts and pages.
    - **User-Agent Rotation**: It rotates between different User-Agent strings to mimic requests from various clients.
    - **Concurrency**: It uses threading to make concurrent requests, further intensifying the attack.
+   - **To Use**:
+   ```bash
+   python3 face.py
+   ```
 
 **Potential Impact**
 
