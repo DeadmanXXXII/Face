@@ -136,7 +136,7 @@ QrThZm6BcPBXW3JZdkTN_jWo
 curl -X POST -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://facebook.com/rsrc.php/v3 -v
 ```
 ```bash
-curl -X PUT -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://facebook.com/rsrc.php/v3 -v
+curl -X PUT -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://facebook.com/rsrc.php/ -v
 ```
 The reason this is the command is because this.
 ```bash
