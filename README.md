@@ -110,8 +110,65 @@ This result indicates that the server was able to handle the flood of requests w
 
 **Key Components:**
 - **Resource Exhaustion**: The script was designed to flood the target with a large number of HTTP requests, potentially leading to performance degradation or service disruption.
+
+
+### File Upload
 - **File Upload**: Subsequent scripts (`rfufb.py`) attempted to exploit potential weaknesses in file upload mechanisms.
 
+### Script Overview: `rfufb.py`
+
+The `rfufb.py` script is designed to test and exploit remote file upload vulnerabilities through HTTP `POST` and `PUT` requests. It attempts to upload a specified file to multiple URLs, simulating a potential attack vector for systems vulnerable to arbitrary file uploads.
+
+#### **Script Breakdown**
+
+1. **Imports:**
+   - `requests`: A Python library used for making HTTP requests.
+
+2. **Defined URLs:**
+   - Two lists of URLs (`post_urls` and `put_urls`) are defined. These URLs represent endpoints where the script attempts to upload files using the `POST` and `PUT` methods, respectively.
+
+3. **Function: `upload_file`**
+   - **Parameters:**
+     - `file_path`: Path to the file to be uploaded.
+     - `post_message`: Message or metadata to send with the file upload.
+     - `endpoint_url`: URL to which the file is to be uploaded.
+     - `method`: HTTP method to use (`POST` or `PUT`).
+   - **Process:**
+     - Opens the file specified by `file_path` in binary read mode.
+     - Prepares the `payload` with an optional message and the file itself.
+     - Sends the request using the specified HTTP method.
+     - Logs the success or failure of the upload, including the response content.
+
+4. **Main Execution:**
+   - Sets the path of the file to upload (`file_path`) and a generic message (`post_message`).
+   - Iterates over the `post_urls` list, attempting to upload the file using the `POST` method for each URL.
+   - Iterates over the `put_urls` list, attempting to upload the file using the `PUT` method for each URL.
+
+#### **Usage**
+
+- **File Path:** Ensure that the `file_path` variable is correctly set to the location of the file you wish to upload.
+- **Message:** The `post_message` can be customized if needed, though it's currently a placeholder text.
+- **Execution:** Running this script will attempt to upload the specified file to all URLs in both `post_urls` and `put_urls` lists using the respective HTTP methods.
+
+Here’s how you can run the `rfufb.py` script from the command line with the dedicated file path:
+
+```bash
+python3 rfufb.py
+```
+
+Ensure the `rfufb.py` script contains the following file path setup:
+
+```python
+# Main script to loop through all URLs
+file_path = '/root/meta/sd.py'  # Path to your file
+post_message = "Uploading a .py file"
+```
+
+This setup will use `/root/meta/sd.py` as the file to upload. Make sure `rfufb.py` is located in the current directory or provide the full path to `rfufb.py` if running from another location.
+
+#### **Purpose**
+
+The `rfufb.py` script is used to test and potentially exploit file upload vulnerabilities in web applications, by trying to upload a file to various endpoints. This can help identify endpoints that accept file uploads, and if not properly secured, may lead to unauthorized file uploads or other security issues.
 
 ### **Backend Code Observations and Use of `apimapi.py`**
 
