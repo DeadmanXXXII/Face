@@ -112,6 +112,75 @@ This result indicates that the server was able to handle the flood of requests w
 - **Resource Exhaustion**: The script was designed to flood the target with a large number of HTTP requests, potentially leading to performance degradation or service disruption.
 - **File Upload**: Subsequent scripts (`rfufb.py`) attempted to exploit potential weaknesses in file upload mechanisms.
 
+
+### **Backend Code Observations and Use of `apimapi.py`**
+
+**Overview**
+
+The `apimapi.py` script was utilized to interact with backend endpoints to discover potential APIs and endpoints that could be exploited. The script's usage involved various commands to explore and retrieve information from the specified URLs, which facilitated the identification of endpoints used in subsequent attacks.
+
+**APImapi.py**
+```
+https://github.com/DeadmanXXXII/APImapi
+```
+**Commands Executed**
+
+1. **Basic URL Request**:
+   ```bash
+   python3 apimapi.py https://static.xx.fbcdn.net/rsrc.php/v3/
+   ```
+
+   This command was used to perform a basic request to the given URL, aiming to gather initial information from the endpoint.
+
+2. **Depth and Output Specification**:
+   ```bash
+   python3 apimapi.py --url https://static.xx.fbcdn.net/rsrc.php/v3/ --depth 3 --output o.txt
+   ```
+
+   This command specifies a depth of 3, indicating that the script should follow links up to three levels deep from the base URL. The output is directed to `o.txt`.
+
+3. **Alternative URL and Depth Combination**:
+   ```bash
+   python3 apimapi.py --url https://static.xx.fbcdn.net/rsrc.php/v3 --depth 3 --output o.txt
+   ```
+
+   This command performs a similar operation to the previous one but uses a slightly different URL format.
+
+4. **Exploration with Query Parameter**:
+   ```bash
+   python3 apimapi.py https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/Lfj2oQBPV5q.js? --depth 3 --output a.txt
+   ```
+
+   This command includes a query parameter in the URL and explores up to three levels deep, saving the output to `a.txt`.
+
+5. **Exploration with Query Parameter (Alternative)**:
+   ```bash
+   python3 apimapi.py --url https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/Lfj2oQBPV5q.js? --depth 3 --output a.txt
+   ```
+
+   This command is similar to the previous one but uses the `--url` flag explicitly.
+
+6. **Output Examination**:
+   ```bash
+   cat a.txt
+   ```
+
+   This command is used to view the contents of `a.txt`, which includes the results from the previous exploration commands.
+
+**Observations and Analysis**
+
+- **Endpoint Discovery**: The use of `apimapi.py` with different URL formats and depths allowed for comprehensive exploration of potential endpoints within the Facebook application.
+- **Query Parameters**: Including query parameters in the URL helped identify endpoints that may have different handling based on the query, which is crucial for discovering hidden or less obvious endpoints.
+- **Depth Level Exploration**: Specifying a depth of 3 enabled the script to explore beyond the initial URL, potentially uncovering nested endpoints or additional resources.
+
+**Implications for Exploitation**
+
+The information gathered from `apimapi.py` provided valuable insights into the structure of the Facebook backend and the available endpoints. This facilitated more targeted exploitation, such as identifying areas vulnerable to malicious file uploads and weak authentication tokens.
+
+**Subsequent Use**
+
+The collected data was instrumental in using the `Cookie_Monster.py` script to obtain authentication tokens and perform file uploads, demonstrating the importance of backend exploration in crafting effective attacks.
+
 **Final Exploitation**:
 - Using a forged authentication token obtained from `Cookie_Monster.py`, file uploads were successfully performed via both `POST` and `PUT` methods.
 
