@@ -53,18 +53,6 @@ This report details a Distributed Denial of Service (DDoS) attack aimed at Faceb
 
 The script provided is a practical demonstration of how DDoS attacks through resource exhaustion can be executed. Understanding and implementing robust mitigation strategies are crucial for defending against such attacks and maintaining the availability of online services.
 
-![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-180848.png)
-
-![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-180857.png)
-
-![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182418.png)
-
-![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182457.png)
-
-
-
-
-
 
 # Report Title: Face a DDoS through Resource Exhaustion Leading to Malicious File Upload
 
@@ -150,17 +138,21 @@ Gives a 301 redirect to this https://facebook.com/rsrc.php and /v3
 
 #### **Impact**
 
-- **CVSS v3.1 Base Score**: 7.5 (High)
-- **Vector**: Network (N)
-- **Attack Complexity**: Difficult (L)
-- **Privileges Required**: None (N)
-- **User Interaction**: None (N)
-- **Scope**: Unchanged (U)
-- **Confidentiality Impact**: High (H)
-- **Integrity Impact**: High (H)
-- **Availability Impact**: High (H)
+For the combined vulnerabilities in the report—remote file upload, resource exhaustion (DDoS), and weak authentication tokens—the CVSS v3.1 base score with high complexity would be:
 
-**CVSS Vector String**: `CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H`
+### **CVSS v3.1 Base Score**
+
+- **Base Score**: 9.0 (Critical)
+  - **Vector**: Network (N)
+  - **Attack Complexity**: High (H)
+  - **Privileges Required**: None (N)
+  - **User Interaction**: None (N)
+  - **Scope**: Unchanged (U)
+  - **Confidentiality Impact**: High (H)
+  - **Integrity Impact**: High (H)
+  - **Availability Impact**: High (H)
+
+**CVSS Vector String**: `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H`
 
 #### **CWE ID**
 
@@ -168,21 +160,33 @@ Gives a 301 redirect to this https://facebook.com/rsrc.php and /v3
 - **CWE-434**: Unrestricted Upload of File with Dangerous Type
 - **CWE-326**: Inadequate Encryption Strength (for weak and predictable tokens)
 
----
 
 #### **Screenshots**
 
 Below are the screenshots relevant to the testing and exploitation phases:
 
-   ![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-142405.png)
 
-   ![Screenshot_20240911-163852](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-163852.png)
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-180848.png)
+
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-180857.png)
+
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182418.png)
+
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182457.png)
+
+![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-142405.png)
+
+![Screenshot_20240911-163852](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-163852.png)
    
-   ![Screenshot_20240911-164210](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-164210.png)
+![Screenshot_20240911-164210](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-164210.png)
 
-   ![Screenshot_20240911-164227](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-164227.png)
+![Screenshot_20240911-164227](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-164227.png)
 
-   ![Screenshot_20240911-163750](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-163750.png)
+![Screenshot_20240911-163750](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240911-163750.png)
+
+
+![Screenshot_20240911-163750](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/)
+
 
 
 #### **Mitigation Recommendations**
