@@ -198,7 +198,7 @@ curl -X PUT -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https:/
 ```
 The reason this is the command is because this.
 ```bash
-1curl -X PUT -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://static.xx.fbcdn.net/rsrc.php
+curl -X PUT -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://static.xx.fbcdn.net/rsrc.php
 ```
 ```bash
 curl -X POST -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://static.xx.fbcdn.net/rsrc.php
