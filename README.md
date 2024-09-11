@@ -1,5 +1,6 @@
-# Face
-Ddos for Facebook
+# Report Title: Face a DDoS through Resource Exhaustion Leading to Malicious File Upload.
+
+## Read until the end.
 
 **Title: Facebook DDoS Through Resource Exhaustion**
 
